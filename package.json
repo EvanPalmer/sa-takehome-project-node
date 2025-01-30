@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "SA Takehome Project",
   "scripts": {
-    "start": "node app.js"
+    "start": "nodemon app.js"
   },
   "author": "Matt Mitchell",
   "license": "MIT",
