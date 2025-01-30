@@ -2,11 +2,55 @@
 This is Evan's application for the take home SA Assignmenet for Stripe
 
 ## How to build, configure and run
-- Clone repo
-- Set envronment variables
+- Open your terminal of choice
+- Clone this repo locally
+  ```
+  git clone https://github.com/EvanPalmer/sa-takehome-project-node-submit.git
+  ```
+- Set keys in config file
+ - in folder where the repository has been cloned
+ - rename sample.env to .env
+ - open .env in your editor of choice jand update your API keys found here: https://dashboard.stripe.com/test/apikeys
 - Add products in dashboard
+ - Navigate to your product dashboard: [https://dashboard.stripe.com/test/products?active=true](https://dashboard.stripe.com/test/products?active=true)
+ - Click "Create Product"
+ - Add procucts for each of the items listed below via these steps:
+  - Name
+  - Description
+  - Image
+  - One Time Price
+   - Amount
+  - Click **Next**
+  - Add **Product**
 - Add products in code
+ - For each of the products created we need to add the PriceID to the code.
+ - Navigate to your Product Catalog  [https://dashboard.stripe.com/test/products?active=true](https://dashboard.stripe.com/test/products?active=true)
+ - Select a Product
+ - Click the elipisis next to the price created above
+ - Click "Copy Price ID"
+ - Open the **app.js** file in your IDE of choice
+ - Update the associated price on lines 65, 70 and 75
+ 
 - Confirm port and localhost
+ - Open the **app.js** file in your IDE of choice
+ - Confirm the YOUR_DOMAIN constant on line 6
+- Run the app
+ - In your terminal of choice, navigate to the folder you cloned this repo to
+ - Install dependencies, and run web application
+     ```
+     npm install
+     npm start
+     ```
+- Run in browser
+ - Open Browser
+ - Navigate to **http://localhost:3000/**
+- Purchase a product
+  - In the browser, select a product
+
+Products
+**Name: **
+**Description: **
+
 
 ## The Solution
 ### How it works
