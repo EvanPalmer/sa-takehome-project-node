@@ -26,7 +26,6 @@ app.get('/', function(req, res) {
   res.render('index');
 });
 
-
 /**
  * Create Payment Intent Route
  */

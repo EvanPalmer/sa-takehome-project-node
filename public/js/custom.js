@@ -183,7 +183,7 @@ $(document).ready(function() {
         return;
       }
     
-      const { paymentIntent } = await   (clientSecret);
+      const { paymentIntent } = await stripe.retrievePaymentIntent(clientSecret);
     
       setPaymentDetails(paymentIntent);
     }
