@@ -19,14 +19,32 @@ This is Evan's application for the take home SA Assignmenet for Stripe
     - Image: public/images/working-in-public.jpg
   - Click "Add product"
   - Click "One Time Price"
-    - Amount
+    - Amount: 28
     - Click **Next**
-    - Click **Add Product**
-- Add products in code
+  - Click **Add Product**
+  - Click "Create product"
+  - Enter
+    - Name: The Making of Prince of Persia: Journals 1985-1993
+    - Image: public/images/prince-of-persia.jpg
+  - Click "Add product"
+  - Click "One Time Price"
+    - Amount: 25
+    - Click **Next**
+  - Click **Add Product**
+  - Click "Create product"
+  - Enter
+    - Name: The Art of Doing Science and Engineering
+    - Image: public/images/art-science-eng.jpg
+  - Click "Add product"
+  - Click "One Time Price"
+    - Amount: 23
+    - Click **Next**
+  - Click **Add Product**
+- Add corresponding products into source code
   - For each of the products created we need to add the PriceID to the code.
   - Navigate to your Product Catalog  [https://dashboard.stripe.com/test/products?active=true](https://dashboard.stripe.com/test/products?active=true)
   - Select a Product
-  - Click the elipisis next to the price created above
+  - Click the elipisis ('...')next to the price created above
   - Click "Copy Price ID"
   - Open the **app.js** file in your IDE of choice
   - Update the associated price on lines 65, 70 and 75
@@ -45,11 +63,11 @@ This is Evan's application for the take home SA Assignmenet for Stripe
   - Open Browser
   - Navigate to **http://localhost:3000/**
 - Purchase a product
-  - In the browser, select a product
-
-Products
-**Name: **
-**Description: **
+  - In the browser, select a product by clicking the blue "Purchase" button
+  - Enter the Stripe Test card number 4242 4242 4242 4242
+  - Enter any future date for the expiration data
+  - Enter any three digits for the CVC
+  - Click **pay now*
 
 
 ## The Solution
@@ -71,11 +89,36 @@ Products
   - I used this to get the checkout session on the server side when using the Embedded Form technique
 
 ### How is it architected
-Follows the 
-
+The application follows the 
+```mermaid
+  sequenceDiagram
+    Actor U as User
+    participant C as Client Side Code
+    participant S as Server Side Code
+ 
+    U->> C: Select Product
+    C ->> S: Send Item ID to server
+    S ->> S: Match Item ID to Stripe Pricing ID
+    S ->> Stripe: Look Up Price Amount from Price ID
+    Stripe ->> S: Return Pricing from Stripe product catalog
+    S ->> Stripe: Create Stripe Payment Intent
+    Stripe ->> S: Return Stripe Payment Intent object 
+    S ->> C: Return Client Secret for Payment Intent
+    C ->> Stripe: Request Payment Element
+    Stripe ->> C: Return Payment Element
+    C ->> C: Mount Payment Eelement 
+    U ->> Stripe:  Sumbit credit card details for payment
+    Stripe ->> Stripe: Complete Payment Intent
+    Stripe ->> C: Return success
+    C ->> C: Redirect to completion page with Payment Intent ID and Secret
+    C ->> Stripe: Send payment intent ID to stripe
+    Stripe ->> C: Return Payment Intent details to client
+    C ->> C: Display payment status
+    C ->> U: See payment status
+```
 ## My Approach
 ### How did you approach this problem? 
-1. Read requirements from Izzy
+1. Read requirements in email from Izzy
  - Selected Node because of the lanugages supported I'm most familiar with JavaScript
  - I considered building with .Net and C#
  - Noted that I'll need to keep track of a few things, like my approach and considerations for production, so started taking notes as I went along.
@@ -108,17 +151,21 @@ Follows the
  - To see my other builds, please see the repo here: https://github.com/EvanPalmer/sa-takehome-project-node-initial
 
 7. Review Express Framework
- - Super simple, but I just quickly checked in on the basics as it was new to me.
+ - Super simple, but I just quickly checked in on the basics as it was relitively new to me.
 
 8. Review Dashboard, in particular Product Calalog, Pricing Transactions and I found the logs useful too. 
 
 ### Which docs did you use to complete the project? 
+Final build is based off the Advanced integration quickstart guide here:
+https://docs.stripe.com/payments/quickstart
 
+Additioanlly I used many other documents including:
 1. Low Code: https://docs.stripe.com/no-code
 2. Stripe Hosted: https://docs.stripe.com/checkout/quickstart
 3. Embedded Form: https://docs.stripe.com/checkout/embedded/quickstart
 4. Stripe Elements: https://docs.stripe.com/payments/payment-element
 5. Payment Intents: https://docs.stripe.com/payments/payment-intents
+
 
 ### What challenges did you encounter?
 - Major challenge was having a newborn baby in the middle of my prep! But that was a good challenge and not unexpected :)
@@ -150,30 +197,3 @@ _This is work that I would like to do if I had a little more time._
 - Client side code is a bit naff in general. I mentioned earlier that I'm not sure I followed best practice, so I'd proably ask for a peer review from someone with more experience here.
 - Customise look and feel
 - I wanted to create a built script that populated the products and prices in Stripe and also was used in the application, for ease of set up.
-
-## How to build, configure and run
-You'll receive these in email.
-
-## Application overview
-This demo is written in Javascript (Node.js) with the [Express framework](https://expressjs.com/). You'll need to retrieve a set of testmode API keys from the Stripe dashboard (you can create a free test account [here](https://dashboard.stripe.com/register)) to run this locally.
-
-We're using the [Bootstrap](https://getbootstrap.com/docs/4.6/getting-started/introduction/) CSS framework. It's the most popular CSS framework in the world and is pretty easy to get started with — feel free to modify styles/layout if you like. 
-
-To simplify this project, we're also not using any database here, either. Instead `app.js` includes a simple switch statement to read the GET params for `item`. 
-
-To get started, clone the repository and run `npm install` to install dependencies:
-
-```
-git clone https://github.com/mattmitchell6/sa-takehome-project-node && cd sa-takehome-project-node
-npm install
-```
-
-Rename `sample.env` to `.env` and populate with your Stripe account's test API keys
-
-Then run the application locally:
-
-```
-npm start
-```
-
-Navigate to [http://localhost:3000](http://localhost:3000) to view the index page.
