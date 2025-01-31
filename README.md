@@ -1,5 +1,5 @@
 # Evan's Stripe SA Assignment
-This is Evan's application for the take home SA Assignmenet for Stripe
+This is Evan's application for the take home SA Assignmenet for Stripe.
 
 ## How to build, configure and run
 - Open your terminal of choice
@@ -89,7 +89,10 @@ This is Evan's application for the take home SA Assignmenet for Stripe
   - I used this to get the checkout session on the server side when using the Embedded Form technique
 
 ### How is it architected
-The application follows the 
+The application follows the example at https://docs.stripe.com/payments/quickstart with the addition of price look up against the Stripe Product Catalog.
+
+The flow as a sequence diagram below.
+
 ```mermaid
   sequenceDiagram
     Actor U as User
