@@ -179,7 +179,7 @@ _How you might extend this if you were building a more robust instance of the sa
 My build is clearly not production ready. I'll break this up into two sections: Productionize and TODO.
 
 1. Productionize
-_This is work that would be required or highly recommened for a real build, but I wouldn't set this up for the assignment._
+_This is work that would be required or highly recommened for a real build, but I wouldn't set this up for the assignment, there are two branches. 
 - Need a proper deploy pipeline, and automation across environments
 - ERP/Caltalog integration
 - Unit and functional test coverage
