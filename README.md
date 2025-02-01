@@ -151,7 +151,12 @@ The flow as a sequence diagram below.
 	- Advanced integration
  - Decided to start with the most basic method and iterate, so I built it with Low Code, which was trivial. Then the Stripe Hosted-Page which was very straight forward. Then used the Embedded Form, and lastly I used Stripe Elements. 
  - ** According to the instructions there is a requirement to build this using <ins>Stipe Elements</ins>. I didn't realise ths was a proper noun otherwise I would probably have prioritised! So started looking into each different way to build this with Stripe.
- - To see my other builds, please see the repo here: https://github.com/EvanPalmer/sa-takehome-project-node-initial
+ - To see my other builds, please see the repo here, noting both branches.
+   ```
+   https://github.com/EvanPalmer/sa-takehome-project-node-initial
+   ```
+
+   
 
 7. Review Express Framework
  - Super simple, but I just quickly checked in on the basics as it was relitively new to me.
@@ -182,7 +187,8 @@ _How you might extend this if you were building a more robust instance of the sa
 My build is clearly not production ready. I'll break this up into two sections: Productionize and TODO.
 
 1. Productionize
-_This is work that would be required or highly recommened for a real build, but I wouldn't set this up for the assignment, there are two branches. 
+_This is work that would be required or highly recommened for a real build, but I wouldn't set this up for the assignment._
+
 - Need a proper deploy pipeline, and automation across environments
 - ERP/Caltalog integration
 - Unit and functional test coverage
@@ -191,6 +197,7 @@ _This is work that would be required or highly recommened for a real build, but 
 
 2. TODO
 _This is work that I would like to do if I had a little more time._
+
 - Better responses page for completion
  - I basically used it as-is from the example code. I know it looks ugly, I actually think it's not honoring the CSS styles/components properly.
 - Proper envronment variable control in the client side, at least encapsualted in some way, rath than just scattered around as magic strings
