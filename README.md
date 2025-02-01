@@ -1,5 +1,5 @@
 # Evan's Stripe SA Assignment
-This is Evan's application for the take home SA Assignmenet for Stripe.
+This is Evan's submission for the take home SA Assignment for Stripe.
 
 ## How to build, configure and run
 - Open your terminal of choice
