@@ -10,7 +10,7 @@ This is Evan's submission for the take home SA Assignment for Stripe.
 - Set keys in config file
   - in folder where the repository has been cloned
   - rename sample.env to .env
-  - open .env in your editor of choice jand update your API keys found here: https://dashboard.stripe.com/test/apikeys
+  - open .env in your editor of choice and update your API keys found here: https://dashboard.stripe.com/test/apikeys
 - Add products in dashboard
   - Navigate to your product dashboard: [https://dashboard.stripe.com/test/products?active=true](https://dashboard.stripe.com/test/products?active=true)
   - Click "Create product"
@@ -44,7 +44,7 @@ This is Evan's submission for the take home SA Assignment for Stripe.
   - For each of the products created we need to add the PriceID to the code.
   - Navigate to your Product Catalog  [https://dashboard.stripe.com/test/products?active=true](https://dashboard.stripe.com/test/products?active=true)
   - Select a Product
-  - Click the elipisis ('...')next to the price created above
+  - Click the ellipsis ('...') next to the price created above
   - Click "Copy Price ID"
   - Open the **app.js** file in your IDE of choice
   - Update the associated price on lines 65, 70 and 75
@@ -77,9 +77,9 @@ This is Evan's submission for the take home SA Assignment for Stripe.
 - stripe.paymentIntents
   - _create_ a payment intent when we load up the payment on the server side
 - stripe.retrievePaymentIntent
- - retreive the payment intent on the client side
+ - retrieve the payment intent on the client side
 - stripe.prices.retrieve
-  - to retreive prices on the server side ensuring the payment is made in alignment with the catalog.
+  - to retrieve prices on the server side ensuring the payment is made in alignment with the catalog.
 - stripe.elements
  - to create the payment component on the client side
  - I should have worked on the look and feel here
@@ -122,17 +122,17 @@ The flow as a sequence diagram below.
 ## My Approach
 ### How did you approach this problem? 
 1. Read requirements in email from Izzy
- - Selected Node because of the lanugages supported I'm most familiar with JavaScript
+ - Selected Node because of the languages supported I'm most familiar with JavaScript
  - I considered building with .Net and C#
  - Noted that I'll need to keep track of a few things, like my approach and considerations for production, so started taking notes as I went along.
 
-2. Read GitHub Instrucstions
+2. Read GitHub Instructions
  - Noting I'll need to familiarise myself with Express Framework and the Stripe SDK
 
 3. I forked, cloned and installed from the Stripe git repo
 
 4. Open in VS Code
- - Update keys form my dashboard
+ - Update keys from my dashboard
  - Installed **nodemon** and **dotenv**
  - Have a glance at the source code structure, which looks straight forward with app.js and some views.
 		
@@ -159,15 +159,15 @@ The flow as a sequence diagram below.
    
 
 7. Review Express Framework
- - Super simple, but I just quickly checked in on the basics as it was relitively new to me.
+ - Super simple, but I just quickly checked in on the basics as it was relatively new to me.
 
-8. Review Dashboard, in particular Product Calalog, Pricing Transactions and I found the logs useful too. 
+8. Review Dashboard, in particular Product Catalog, Pricing Transactions and I found the logs useful too. 
 
 ### Which docs did you use to complete the project? 
 Final build is based off the Advanced integration quickstart guide here:
 https://docs.stripe.com/payments/quickstart
 
-Additioanlly I used many other documents including:
+Additionally I used many other documents including:
 1. Low Code: https://docs.stripe.com/no-code
 2. Stripe Hosted: https://docs.stripe.com/checkout/quickstart
 3. Embedded Form: https://docs.stripe.com/checkout/embedded/quickstart
@@ -179,7 +179,7 @@ Additioanlly I used many other documents including:
 - Major challenge was having a newborn baby in the middle of my prep! But that was a good challenge and not unexpected :)
 - I've written production JavaScript in my life as a developer, so comfortable with the syntax, but I've never professionally built backend Node applications, so there was a slight learning curve.
   - For example, I wasn't sure of the best way to associate the client side code with a Handlebars template or route. I'm still not sure I followed best practice here.
-- I built a lot without realising that the requirements specifcy to use the Stripe Elements technique. When I realised I needed to build with Stripe Elements, I had to take a step back and understand the payment intent API as I didn't use that for other builds. And in hindsight, it was good to slowly move up in complexity of builds as a learning exercise, but it was probably a bit too time consuming meaning I couldn't do a lot of the additional work I had planned that would have looked quite cool (see TODOs below). 
+- I built a lot without realising that the requirements specify to use the Stripe Elements technique. When I realised I needed to build with Stripe Elements, I had to take a step back and understand the payment intent API as I didn't use that for other builds. And in hindsight, it was good to slowly move up in complexity of builds as a learning exercise, but it was probably a bit too time consuming meaning I couldn't do a lot of the additional work I had planned that would have looked quite cool (see TODOs below). 
 
 ## Productionize and TODO
 _How you might extend this if you were building a more robust instance of the same application._
@@ -187,7 +187,7 @@ _How you might extend this if you were building a more robust instance of the sa
 My build is clearly not production ready. I'll break this up into two sections: Productionize and TODO.
 
 1. Productionize
-_This is work that would be required or highly recommened for a real build, but I wouldn't set this up for the assignment._
+_This is work that would be required or highly recommended for a real build, but I wouldn't set this up for the assignment._
 
 - Need a proper deploy pipeline, and automation across environments
 - ERP/Caltalog integration
@@ -200,10 +200,10 @@ _This is work that I would like to do if I had a little more time._
 
 - Better responses page for completion
  - I basically used it as-is from the example code. I know it looks ugly, I actually think it's not honoring the CSS styles/components properly.
-- Proper envronment variable control in the client side, at least encapsualted in some way, rath than just scattered around as magic strings
+- Proper environment variable control in the client side, at least encapsulated in some way, rather than just scattered around as magic strings
 - Better appearance of the payment component
  - I used the basic element, and didn't really play around with customised appearance and other options that look interesting.
 - Better error handling eg: on the query string, server connections etc. 
-- Client side code is a bit naff in general. I mentioned earlier that I'm not sure I followed best practice, so I'd proably ask for a peer review from someone with more experience here.
+- Client side code is a bit naff in general. I mentioned earlier that I'm not sure I followed best practice, so I'd probably ask for a peer review from someone with more experience here.
 - Customise look and feel
-- I wanted to create a built script that populated the products and prices in Stripe and also was used in the application, for ease of set up.
+- I wanted to create a build script that populated the products and prices in Stripe and also was used in the application, for ease of set up.
