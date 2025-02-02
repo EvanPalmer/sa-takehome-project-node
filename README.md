@@ -21,7 +21,7 @@ This is Evan's submission for the take home SA Assignment for Stripe.
   - Click "One Time Price"
     - Amount: 28
     - Click **Next**
-  - Click **Add Product**
+  - Click **Add product**
   - Click "Create product"
   - Enter
     - Name: The Making of Prince of Persia: Journals 1985-1993
@@ -30,7 +30,7 @@ This is Evan's submission for the take home SA Assignment for Stripe.
   - Click "One Time Price"
     - Amount: 25
     - Click **Next**
-  - Click **Add Product**
+  - Click **Add product**
   - Click "Create product"
   - Enter
     - Name: The Art of Doing Science and Engineering
@@ -39,7 +39,7 @@ This is Evan's submission for the take home SA Assignment for Stripe.
   - Click "One Time Price"
     - Amount: 23
     - Click **Next**
-  - Click **Add Product**
+  - Click **Add product**
 - Add corresponding products into source code
   - For each of the products created we need to add the PriceID to the code.
   - Navigate to your Product Catalog  [https://dashboard.stripe.com/test/products?active=true](https://dashboard.stripe.com/test/products?active=true)
